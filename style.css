@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+}
+nav{
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 1vw 10vw;
+    font-size: 22px;
+    background-color: rgba(240, 248, 255, 0.789);
+}
+nav h1{
+    transition: transform .2s ease;
+    cursor: pointer;
+}
+.nr{
+    display: flex;
+    gap: 4vw;
+}
+.nr>h1:hover{
+    transform: scale(1.3);
+    color: red;
+}
+.nr>h1:hover .nr>h1{
+    color: red;
+}
+#page1{
+    height: 100vh;
+    background: url("https://as2.ftcdn.net/v2/jpg/01/80/09/15/1000_F_180091564_ROmI0vsrelco6h4P6enGBP2DS0n55SFN.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    color: #000;
+}
+.bck{
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(10px) brightness(60%);
+}
+.content{
+    cursor: pointer;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    backdrop-filter: blur(20px) brightness(70%);
+    color: white;
+    font-size: 40px;
+    padding: 50px 80px;
+    position: absolute;
+    top: 55%;
+    transition: box-shadow .5s ease,border .5s ease,transform .2s ease;
+}
+.content:hover{
+    transform: translate(10px,10px);
+    box-shadow: black -10px -10px 10px;
+}
+#page2{
+    position: relative;
+    height: 100vh;
+    background-color: rgb(0, 187, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: black -0px -20px 50px;
+    padding: 5vw;
+}
+button{
+    padding: 10px 20px;
+    background-color: #859cb3;
+    color: black;
+    border: none;
+    font-weight: 900;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color .2s ease;
+}
+#grid {
+    margin: 10px;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+}
+.gridbox {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: 6px solid #000;
+    transition: all .5s ease;
+}
+.gridbox::after{
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 20;
+}
+.gridbox>div{
+    height: 50%;
+    width: 100%;
+    font-size: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 60%;
+    gap: 2vw;
+    position: absolute;
+    z-index: 21;
+    transition: all ease .4s;
+    opacity: 0;
+}
+.gridbox>div>h1{
+    font-size: 25px;
+}
+.gridbox:hover>div{
+    top: 50%;
+    opacity: 1;
+    background: linear-gradient(0deg , black,transparent);
+}
+.gridbox::after{
+    background: url("https://kfkit.rometheme.pro/videen/wp-content/uploads/sites/20/2022/03/F3.jpg");
+    background-size: cover;
+}
+.gridbox:hover{
+    transform: scale(1.3);
+    z-index: 1000;
+}
